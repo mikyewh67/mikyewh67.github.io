@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mikye Media — Social Media Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0A0A0C;
+    --black2: #111114;
+    --gold: #D6C28A;
+    --gold2: #E8B84B;
+    --white: #F4F4F0;
+    --gray: #888888;
+    --border: rgba(214,194,138,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,12,0.85);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-cta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--gold2); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 48px 80px;
+    position: relative;
+  }
+
+  /* gold glow blob */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(214,194,138,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.1s forwards;
+  }
+
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.25s forwards;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 300;
+    color: rgba(244,244,240,0.6);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.4s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.55s forwards;
+  }
+
+  .btn-primary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 16px 36px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(214,194,138,0.25);
+  }
+
+  .btn-ghost {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(244,244,240,0.5);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(244,244,240,0.2);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--white); border-color: var(--white); }
+
+  /* ── STATS BAR ── */
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.7s forwards;
+  }
+
+  .stat {
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+    padding: 28px 20px;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 100px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 60px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+    margin-bottom: 60px;
+    max-width: 480px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--black2);
+    padding: 40px 32px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover { border-color: rgba(214,194,138,0.4); transform: translateY(-3px); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 20px;
+  }
+
+  .service-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .service-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(244,244,240,0.5);
+  }
+
+  /* ── HOW IT WORKS ── */
+  .process {
+    padding: 100px 48px;
+    border-top: 1px solid var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  .step {
+    position: relative;
+  }
+
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(214,194,138,0.12);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+
+  .step-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(244,244,240,0.45);
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    margin: 0 48px 100px;
+    padding: 80px 60px;
+    background: var(--black2);
+    border: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(214,194,138,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .cta-title em { font-style: normal; color: var(--gold); }
+
+  .cta-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(244,244,240,0.5);
+    margin-bottom: 40px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  footer p {
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .services, .process { padding: 60px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .cta-section { margin: 0 24px 60px; padding: 48px 28px; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    .stats { flex-wrap: wrap; }
+    .stat { min-width: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">MIKYE<span>.</span>MEDIA</a>
+  <a href="#book" class="nav-cta">Book a Free Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Social Media Marketing</div>
+  <h1>We Build Brands<br>That <em>Stop</em><br>The Scroll.</h1>
+  <p class="hero-sub">Mikye Media helps businesses all over the country blow up on Instagram and TikTok — more followers, more customers, more revenue, all handled for you.</p>
+  <div class="hero-actions">
+    <a href="#book" class="btn-primary">Book a Free Call</a>
+    <a href="#services" class="btn-ghost">See what we do</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Done For You</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">30-Day</span>
+      <span class="stat-label">Results Guarantee</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">2</span>
+      <span class="stat-label">Platforms Mastered</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">$0</span>
+      <span class="stat-label">To Get Started</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">Everything your brand needs to grow.</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-title">Content Creation</div>
+      <p class="service-desc">Posts, Reels, and captions crafted and delivered every week. You focus on your business — we handle the content.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-title">Account Growth</div>
+      <p class="service-desc">We grow your following and engagement with a proven strategy built for the current algorithm — not 2020.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-title">Monthly Reporting</div>
+      <p class="service-desc">Clear results every single month so you always know exactly what's working and where your money is going.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">Up and running in days, not months.</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Book a Free Call</div>
+      <p class="step-desc">We learn your business, your goals, and your audience in a 30-minute call.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">We Build Your Strategy</div>
+      <p class="step-desc">Custom content plan and growth strategy built specifically for your brand.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">We Execute</div>
+      <p class="step-desc">Posts go live, engagement grows, your audience builds. All handled by us.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">You See Results</div>
+      <p class="step-desc">Monthly report with real numbers. More followers, more reach, more customers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="book">
+  <h2 class="cta-title">Ready to <em>grow</em>?<br>Let's talk.</h2>
+  <p class="cta-sub">Book a free 30-minute call. No pitch, no pressure — just a conversation about what's possible for your brand.</p>
+  <a href="https://calendly.com/mikye-mikyemedia/discovery-call" class="btn-primary" target="_blank">Book a Free Call</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MIKYE<span>.</span>MEDIA</div>
+  <p>mikye@mikyemedia.com</p>
+  <p>© 2025 Mikye Media</p>
+</footer>
+
+</body>
+</html>
