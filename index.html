@@ -4,22 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mikye Media — Freelance Brand Scaling</title>
-  <meta name="description" content="Mikye Media helps freelancers turn their skill into a premium online brand that attracts clients, builds trust, and scales revenue." />
+  <meta name="description" content="Mikye Media is a freelance brand scaling service that manages and grows social media pages for businesses, creators, and personal brands." />
 
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #08080A;
-      --bg-2: #0E0E12;
       --card: #131318;
-      --card-2: #181820;
       --text: #F4F0E8;
       --muted: rgba(244, 240, 232, 0.64);
       --faint: rgba(244, 240, 232, 0.38);
@@ -28,13 +22,10 @@
       --line: rgba(214, 194, 138, 0.16);
       --line-soft: rgba(244, 240, 232, 0.08);
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
-      --radius: 24px;
       --max: 1180px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background:
@@ -57,10 +48,7 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .shell {
       width: min(var(--max), calc(100% - 40px));
@@ -95,9 +83,7 @@
       font-size: 18px;
     }
 
-    .logo span {
-      color: var(--gold);
-    }
+    .logo span { color: var(--gold); }
 
     .nav-links {
       display: flex;
@@ -108,17 +94,11 @@
       font-weight: 500;
     }
 
-    .nav-links a {
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a { transition: color 0.2s ease; }
+    .nav-links a:hover { color: var(--text); }
 
     .nav-cta {
       padding: 11px 18px;
-      border: 1px solid var(--line);
       border-radius: 999px;
       color: var(--bg);
       background: var(--gold);
@@ -129,10 +109,7 @@
       transition: transform 0.2s ease, background 0.2s ease;
     }
 
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      background: var(--gold-2);
-    }
+    .nav-cta:hover { transform: translateY(-1px); background: var(--gold-2); }
 
     .hero {
       position: relative;
@@ -183,12 +160,10 @@
       font-size: clamp(48px, 7vw, 92px);
       line-height: 0.94;
       margin-bottom: 26px;
-      max-width: 760px;
+      max-width: 780px;
     }
 
-    .gold {
-      color: var(--gold);
-    }
+    .gold { color: var(--gold); }
 
     .hero-copy {
       color: var(--muted);
@@ -225,10 +200,7 @@
       box-shadow: 0 18px 46px rgba(214, 194, 138, 0.18);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: var(--gold-2);
-    }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--gold-2); }
 
     .btn-secondary {
       border: 1px solid var(--line);
@@ -236,16 +208,9 @@
       background: rgba(255,255,255,0.03);
     }
 
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      border-color: rgba(214, 194, 138, 0.42);
-    }
+    .btn-secondary:hover { transform: translateY(-2px); border-color: rgba(214, 194, 138, 0.42); }
 
-    .proof-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .proof-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
     .proof-pill {
       border: 1px solid var(--line-soft);
@@ -260,7 +225,7 @@
       position: relative;
       padding: 26px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 24px;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
         rgba(19, 19, 24, 0.78);
@@ -277,10 +242,7 @@
       opacity: 0.55;
     }
 
-    .card-content {
-      position: relative;
-      z-index: 1;
-    }
+    .card-content { position: relative; z-index: 1; }
 
     .mini-label {
       color: var(--gold);
@@ -291,7 +253,7 @@
       margin-bottom: 14px;
     }
 
-    .audit-card {
+    .dashboard {
       padding: 18px;
       border: 1px solid var(--line-soft);
       border-radius: 18px;
@@ -299,23 +261,12 @@
       margin-bottom: 16px;
     }
 
-    .audit-card h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
+    .dashboard h3 { font-size: 24px; margin-bottom: 8px; }
+    .dashboard p { color: var(--muted); font-size: 14px; }
 
-    .audit-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .metric-list { display: grid; gap: 10px; margin-top: 18px; }
 
-    .score-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .score {
+    .metric {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 14px;
@@ -326,15 +277,8 @@
       background: rgba(255,255,255,0.025);
     }
 
-    .score strong {
-      font-size: 14px;
-    }
-
-    .score span {
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: 900;
-    }
+    .metric strong { font-size: 14px; }
+    .metric span { color: var(--gold); font-size: 13px; font-weight: 900; }
 
     .bar {
       grid-column: 1 / -1;
@@ -351,9 +295,7 @@
       background: linear-gradient(90deg, var(--gold), var(--gold-2));
     }
 
-    section {
-      padding: 96px 0;
-    }
+    section { padding: 96px 0; }
 
     .section-head {
       display: grid;
@@ -380,14 +322,14 @@
     .section-copy {
       color: var(--muted);
       font-size: 17px;
-      max-width: 620px;
+      max-width: 650px;
     }
 
     .problem-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       border: 1px solid var(--line-soft);
-      border-radius: var(--radius);
+      border-radius: 24px;
       overflow: hidden;
       background: rgba(255,255,255,0.025);
     }
@@ -398,9 +340,7 @@
       min-height: 210px;
     }
 
-    .problem:last-child {
-      border-right: 0;
-    }
+    .problem:last-child { border-right: 0; }
 
     .problem-num {
       color: var(--gold);
@@ -411,16 +351,8 @@
       margin-bottom: 20px;
     }
 
-    .problem h3 {
-      font-size: 21px;
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-
-    .problem p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .problem h3 { font-size: 21px; line-height: 1.1; margin-bottom: 12px; }
+    .problem p { color: var(--muted); font-size: 14px; }
 
     .offer {
       border: 1px solid var(--line);
@@ -446,20 +378,10 @@
       border: 1px solid var(--line-soft);
     }
 
-    .offer-main h3 {
-      font-size: 34px;
-      margin-bottom: 14px;
-    }
+    .offer-main h3 { font-size: 34px; margin-bottom: 14px; }
+    .offer-main p { color: var(--muted); margin-bottom: 24px; }
 
-    .offer-main p {
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .deliverables {
-      display: grid;
-      gap: 12px;
-    }
+    .deliverables { display: grid; gap: 12px; }
 
     .deliverable {
       display: flex;
@@ -485,16 +407,8 @@
       font-size: 13px;
     }
 
-    .deliverable strong {
-      display: block;
-      margin-bottom: 3px;
-      font-size: 15px;
-    }
-
-    .deliverable span {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .deliverable strong { display: block; margin-bottom: 3px; font-size: 15px; }
+    .deliverable span { color: var(--muted); font-size: 14px; }
 
     .steps {
       display: grid;
@@ -511,10 +425,7 @@
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .step:hover {
-      transform: translateY(-4px);
-      border-color: rgba(214,194,138,0.35);
-    }
+    .step:hover { transform: translateY(-4px); border-color: rgba(214,194,138,0.35); }
 
     .step-num {
       font-family: "Syne", sans-serif;
@@ -525,15 +436,8 @@
       margin-bottom: 18px;
     }
 
-    .step h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .step h3 { font-size: 21px; margin-bottom: 10px; }
+    .step p { color: var(--muted); font-size: 14px; }
 
     .services-grid {
       display: grid;
@@ -561,15 +465,8 @@
       font-weight: 900;
     }
 
-    .service h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .service p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .service h3 { font-size: 22px; margin-bottom: 10px; }
+    .service p { color: var(--muted); font-size: 14px; }
 
     .packages {
       display: grid;
@@ -586,7 +483,7 @@
       border: 1px solid var(--line-soft);
       border-radius: 26px;
       background: rgba(255,255,255,0.025);
-      min-height: 470px;
+      min-height: 480px;
     }
 
     .package.featured {
@@ -611,16 +508,8 @@
       letter-spacing: 0.08em;
     }
 
-    .package h3 {
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-
-    .package p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
+    .package h3 { font-size: 26px; margin-bottom: 10px; }
+    .package p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
 
     .price {
       font-family: "Syne", sans-serif;
@@ -646,22 +535,9 @@
       font-size: 14px;
     }
 
-    .package li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .package li::before {
-      content: "✓";
-      color: var(--gold);
-      font-weight: 900;
-    }
-
-    .package .btn {
-      margin-top: auto;
-      width: 100%;
-    }
+    .package li { display: flex; gap: 10px; align-items: flex-start; }
+    .package li::before { content: "✓"; color: var(--gold); font-weight: 900; }
+    .package .btn { margin-top: auto; width: 100%; }
 
     .results-band {
       padding: 34px;
@@ -675,21 +551,10 @@
       gap: 20px;
     }
 
-    .result h3 {
-      font-size: 36px;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
+    .result h3 { font-size: 36px; color: var(--gold); margin-bottom: 8px; }
+    .result p { color: var(--muted); font-size: 14px; }
 
-    .result p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .faq {
-      display: grid;
-      gap: 12px;
-    }
+    .faq { display: grid; gap: 12px; }
 
     .faq-item {
       border: 1px solid var(--line-soft);
@@ -698,16 +563,8 @@
       padding: 22px;
     }
 
-    .faq-item h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .faq-item p {
-      color: var(--muted);
-      font-size: 15px;
-    }
+    .faq-item h3 { font-size: 20px; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .faq-item p { color: var(--muted); font-size: 15px; }
 
     .final-cta {
       position: relative;
@@ -722,22 +579,10 @@
       box-shadow: var(--shadow);
     }
 
-    .final-cta h2 {
-      max-width: 800px;
-      margin: 0 auto 18px;
-    }
+    .final-cta h2 { max-width: 840px; margin: 0 auto 18px; }
+    .final-cta p { color: var(--muted); max-width: 640px; margin: 0 auto 30px; font-size: 17px; }
 
-    .final-cta p {
-      color: var(--muted);
-      max-width: 600px;
-      margin: 0 auto 30px;
-      font-size: 17px;
-    }
-
-    footer {
-      padding: 34px 0;
-      border-top: 1px solid var(--line-soft);
-    }
+    footer { padding: 34px 0; border-top: 1px solid var(--line-soft); }
 
     .footer-inner {
       width: min(var(--max), calc(100% - 40px));
@@ -750,14 +595,8 @@
       font-size: 13px;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 18px;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-    }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { color: var(--muted); }
 
     .reveal {
       opacity: 0;
@@ -765,135 +604,37 @@
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.show { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 980px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 130px;
-        min-height: auto;
-      }
-
-      .hero-grid,
-      .section-head,
-      .offer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .problem-grid,
-      .steps,
-      .services-grid,
-      .packages,
-      .results-band {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .problem:nth-child(2) {
-        border-right: 0;
-      }
-
-      .problem {
-        border-bottom: 1px solid var(--line-soft);
-      }
-
-      .problem:nth-child(3),
-      .problem:nth-child(4) {
-        border-bottom: 0;
-      }
+      .nav-links { display: none; }
+      .hero { padding-top: 130px; min-height: auto; }
+      .hero-grid, .section-head, .offer-grid { grid-template-columns: 1fr; }
+      .problem-grid, .steps, .services-grid, .packages, .results-band { grid-template-columns: 1fr 1fr; }
+      .problem:nth-child(2) { border-right: 0; }
+      .problem { border-bottom: 1px solid var(--line-soft); }
+      .problem:nth-child(3), .problem:nth-child(4) { border-bottom: 0; }
     }
 
     @media (max-width: 640px) {
-      .shell,
-      .nav-inner,
-      .footer-inner {
-        width: min(100% - 28px, var(--max));
-      }
-
-      .nav-inner {
-        height: 68px;
-      }
-
-      .logo {
-        font-size: 15px;
-      }
-
-      .nav-cta {
-        padding: 10px 13px;
-        font-size: 11px;
-      }
-
-      .hero {
-        padding: 112px 0 58px;
-      }
-
-      h1 {
-        font-size: clamp(43px, 16vw, 64px);
-      }
-
-      .hero-copy {
-        font-size: 16px;
-      }
-
-      .btn {
-        width: 100%;
-        padding: 15px 18px;
-      }
-
-      .hero-card {
-        padding: 18px;
-      }
-
-      section {
-        padding: 68px 0;
-      }
-
-      .problem-grid,
-      .steps,
-      .services-grid,
-      .packages,
-      .results-band {
-        grid-template-columns: 1fr;
-      }
-
-      .problem,
-      .problem:nth-child(2),
-      .problem:nth-child(3) {
-        border-right: 0;
-        border-bottom: 1px solid var(--line-soft);
-      }
-
-      .problem:nth-child(4) {
-        border-bottom: 0;
-      }
-
-      .offer {
-        padding: 18px;
-        border-radius: 24px;
-      }
-
-      .offer-main {
-        padding: 22px;
-      }
-
-      .package {
-        min-height: auto;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+      .shell, .nav-inner, .footer-inner { width: min(100% - 28px, var(--max)); }
+      .nav-inner { height: 68px; }
+      .logo { font-size: 15px; }
+      .nav-cta { padding: 10px 13px; font-size: 11px; }
+      .hero { padding: 112px 0 58px; }
+      h1 { font-size: clamp(43px, 16vw, 64px); }
+      .hero-copy { font-size: 16px; }
+      .btn { width: 100%; padding: 15px 18px; }
+      .hero-card { padding: 18px; }
+      section { padding: 68px 0; }
+      .problem-grid, .steps, .services-grid, .packages, .results-band { grid-template-columns: 1fr; }
+      .problem, .problem:nth-child(2), .problem:nth-child(3) { border-right: 0; border-bottom: 1px solid var(--line-soft); }
+      .problem:nth-child(4) { border-bottom: 0; }
+      .offer { padding: 18px; border-radius: 24px; }
+      .offer-main { padding: 22px; }
+      .package { min-height: auto; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
     }
   </style>
 </head>
@@ -919,46 +660,46 @@
       <div class="shell hero-grid">
         <div class="hero-left reveal">
           <div class="eyebrow">Freelance Brand Scaling</div>
-          <h1>Turn your skill into a <span class="gold">client-getting brand.</span></h1>
+          <h1>I manage and grow your page so your brand looks <span class="gold">premium online.</span></h1>
           <p class="hero-copy">
-            Mikye Media helps freelancers look premium, build trust online, and create a simple content system that brings in better clients without looking desperate in DMs.
+            Mikye Media helps businesses, creators, and personal brands build a cleaner online presence through page management, content direction, social growth, and brand positioning.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book a Free Brand Audit</a>
-            <a class="btn btn-secondary" href="#offer">See the System</a>
+            <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book a Free Page Audit</a>
+            <a class="btn btn-secondary" href="#offer">See What I Do</a>
           </div>
 
           <div class="proof-row">
-            <div class="proof-pill">Personal brand setup</div>
-            <div class="proof-pill">Content strategy</div>
-            <div class="proof-pill">Client attraction</div>
+            <div class="proof-pill">Page management</div>
+            <div class="proof-pill">Content direction</div>
+            <div class="proof-pill">Growth strategy</div>
           </div>
         </div>
 
         <aside class="hero-card reveal">
           <div class="card-content">
-            <div class="mini-label">The Mikye Media Method</div>
+            <div class="mini-label">What Mikye Media Handles</div>
 
-            <div class="audit-card">
-              <h3>Brand Scale Snapshot</h3>
-              <p>We find what is making your page look low-value, then rebuild your offer, profile, content, and client path.</p>
+            <div class="dashboard">
+              <h3>Your page, managed like a brand.</h3>
+              <p>I help take your social page from random and inactive to clean, consistent, and built for attention.</p>
 
-              <div class="score-list">
-                <div class="score">
+              <div class="metric-list">
+                <div class="metric">
                   <strong>Profile Trust</strong>
                   <span>92%</span>
                   <div class="bar"><i style="width:92%"></i></div>
                 </div>
 
-                <div class="score">
-                  <strong>Offer Clarity</strong>
+                <div class="metric">
+                  <strong>Content Consistency</strong>
                   <span>88%</span>
                   <div class="bar"><i style="width:88%"></i></div>
                 </div>
 
-                <div class="score">
-                  <strong>Client Path</strong>
+                <div class="metric">
+                  <strong>Growth Direction</strong>
                   <span>95%</span>
                   <div class="bar"><i style="width:95%"></i></div>
                 </div>
@@ -968,8 +709,8 @@
             <div class="deliverable">
               <span class="check">✓</span>
               <div>
-                <strong>Goal: look like the obvious choice.</strong>
-                <span>Not just “post more.” Build a brand that makes people trust you before they ever message you.</span>
+                <strong>Freelance service, not a course.</strong>
+                <span>You let Mikye Media manage and grow the page. I handle the brand side so you can focus on your work.</span>
               </div>
             </div>
           </div>
@@ -982,36 +723,36 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">The Problem</div>
-            <h2>Most freelancers are skilled but their brand looks average.</h2>
+            <h2>Your page could be making your brand look smaller than it really is.</h2>
           </div>
           <p class="section-copy">
-            Your page can quietly make people take you seriously or instantly make them scroll past you. The difference is usually not talent. It is positioning, proof, content, and the way your offer is presented.
+            A business or creator can have a good product, service, or skill — but if the page looks empty, confusing, or inconsistent, people will not take it seriously. Mikye Media fixes the way your brand shows up online.
           </p>
         </div>
 
         <div class="problem-grid reveal">
           <div class="problem">
             <div class="problem-num">01</div>
-            <h3>Your bio does not sell.</h3>
-            <p>People land on your page but do not understand who you help, what you do, or why they should trust you.</p>
+            <h3>Your profile is not clear.</h3>
+            <p>People land on the page and do not immediately understand what you do, why it matters, or why they should follow.</p>
           </div>
 
           <div class="problem">
             <div class="problem-num">02</div>
-            <h3>Your content feels random.</h3>
-            <p>You post when you feel like it, but there is no system that builds authority and leads people toward buying.</p>
+            <h3>Your content is inconsistent.</h3>
+            <p>No clear posting direction makes the page feel inactive, random, or hard to trust.</p>
           </div>
 
           <div class="problem">
             <div class="problem-num">03</div>
-            <h3>Your offer sounds basic.</h3>
-            <p>If your service sounds like everyone else’s, people compare you on price instead of value.</p>
+            <h3>Your brand looks basic.</h3>
+            <p>If your page looks like everyone else’s, people compare you by price instead of value.</p>
           </div>
 
           <div class="problem">
             <div class="problem-num">04</div>
-            <h3>You have no client path.</h3>
-            <p>Views and followers do not matter if there is no simple way for prospects to book, message, or become clients.</p>
+            <h3>Your page is not growing.</h3>
+            <p>Without a growth system, the page depends on luck, occasional posts, or random word of mouth.</p>
           </div>
         </div>
       </div>
@@ -1023,43 +764,43 @@
           <div class="offer-grid">
             <div class="offer-main">
               <div class="section-kicker">The Offer</div>
-              <h3>Freelance Brand Scaling</h3>
+              <h3>Done-For-You Page Management + Brand Growth</h3>
               <p>
-                A done-with-you or done-for-you system for freelancers who want to turn their skill into a cleaner brand, stronger offer, better content, and more serious client opportunities.
+                Mikye Media is a freelance brand-scaling service. I manage and improve your social media presence so your page looks cleaner, grows stronger, and helps your brand get taken seriously.
               </p>
-              <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Get Your Free Audit</a>
+              <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Get a Free Audit</a>
             </div>
 
             <div class="deliverables">
               <div class="deliverable">
                 <span class="check">✓</span>
                 <div>
+                  <strong>Profile Cleanup</strong>
+                  <span>Bio, highlights, pinned posts, links, and page structure cleaned up so the first impression looks premium.</span>
+                </div>
+              </div>
+
+              <div class="deliverable">
+                <span class="check">✓</span>
+                <div>
+                  <strong>Content Direction</strong>
+                  <span>Post ideas, captions, hooks, story prompts, and a clear content plan made for your brand.</span>
+                </div>
+              </div>
+
+              <div class="deliverable">
+                <span class="check">✓</span>
+                <div>
+                  <strong>Page Growth</strong>
+                  <span>Growth strategy built around visibility, consistency, engagement, and making the page look active.</span>
+                </div>
+              </div>
+
+              <div class="deliverable">
+                <span class="check">✓</span>
+                <div>
                   <strong>Brand Positioning</strong>
-                  <span>We make your page instantly explain who you help, what result you create, and why your work is worth paying for.</span>
-                </div>
-              </div>
-
-              <div class="deliverable">
-                <span class="check">✓</span>
-                <div>
-                  <strong>Offer Buildout</strong>
-                  <span>We package your service so it feels more valuable, easier to understand, and easier to sell.</span>
-                </div>
-              </div>
-
-              <div class="deliverable">
-                <span class="check">✓</span>
-                <div>
-                  <strong>Content System</strong>
-                  <span>We build content pillars, post ideas, hooks, and a weekly structure so your page grows with purpose.</span>
-                </div>
-              </div>
-
-              <div class="deliverable">
-                <span class="check">✓</span>
-                <div>
-                  <strong>Client Conversion Path</strong>
-                  <span>We connect your profile, call-to-action, booking link, portfolio, and DM script into one simple client path.</span>
+                  <span>Your page gets positioned so people understand what you do, what makes you valuable, and why they should care.</span>
                 </div>
               </div>
             </div>
@@ -1073,10 +814,10 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">The Process</div>
-            <h2>Simple steps. Clear direction. Better clients.</h2>
+            <h2>Simple process. Better page. Stronger brand.</h2>
           </div>
           <p class="section-copy">
-            This is not random posting or fake motivation. It is a focused system to make your freelance brand look trusted, premium, and ready for real buyers.
+            You do not need to manage the strategy alone. Mikye Media handles the page direction, growth system, and brand improvement.
           </p>
         </div>
 
@@ -1084,25 +825,25 @@
           <div class="step">
             <div class="step-num">01</div>
             <h3>Audit</h3>
-            <p>We review your current page, offer, content, and client flow to find exactly what is blocking trust and conversions.</p>
+            <p>I review your current page, audience, content, brand message, and what is stopping the page from growing.</p>
           </div>
 
           <div class="step">
             <div class="step-num">02</div>
-            <h3>Position</h3>
-            <p>We define your niche, promise, target client, profile message, and the reason people should choose you.</p>
+            <h3>Clean Up</h3>
+            <p>I improve the profile, page structure, bio, highlights, content direction, and overall brand look.</p>
           </div>
 
           <div class="step">
             <div class="step-num">03</div>
-            <h3>Build</h3>
-            <p>We create your profile structure, content plan, offer layout, proof strategy, and client call-to-action.</p>
+            <h3>Manage</h3>
+            <p>I help plan and manage the page with consistent content direction, growth moves, and page optimization.</p>
           </div>
 
           <div class="step">
             <div class="step-num">04</div>
             <h3>Scale</h3>
-            <p>We improve weekly using content performance, audience response, and client conversations so your brand keeps leveling up.</p>
+            <p>We keep improving the page so it builds more trust, gets more attention, and supports your business goals.</p>
           </div>
         </div>
       </div>
@@ -1112,49 +853,49 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">What We Build</div>
-            <h2>Everything your freelance brand needs to look legit.</h2>
+            <div class="section-kicker">Services</div>
+            <h2>What I can handle for your page.</h2>
           </div>
           <p class="section-copy">
-            Mikye Media is made for freelancers who do not just want followers. You want your page to make people trust you, message you, and eventually pay you.
+            Mikye Media is for people who want their social page to look more professional, stay active, and grow with a real strategy behind it.
           </p>
         </div>
 
         <div class="services-grid reveal">
           <div class="service">
             <div class="service-icon">01</div>
-            <h3>Profile Makeover</h3>
-            <p>Bio, highlights, pinned posts, profile photo direction, link structure, and page cleanup so your first impression feels premium.</p>
+            <h3>Page Management</h3>
+            <p>Ongoing help managing the page direction, keeping it organized, active, and aligned with the brand.</p>
           </div>
 
           <div class="service">
             <div class="service-icon">02</div>
-            <h3>Offer Positioning</h3>
-            <p>We help turn your skill into a clear offer with a stronger promise, better pricing logic, and a cleaner reason to buy.</p>
+            <h3>Brand Positioning</h3>
+            <p>Making the page clearly show who the brand is for, what it offers, and why people should trust it.</p>
           </div>
 
           <div class="service">
             <div class="service-icon">03</div>
             <h3>Content Strategy</h3>
-            <p>Content pillars, hooks, post ideas, story prompts, and weekly posting direction built around getting clients, not just likes.</p>
+            <p>Content pillars, post ideas, hooks, captions, story ideas, and weekly direction so the page never feels random.</p>
           </div>
 
           <div class="service">
             <div class="service-icon">04</div>
-            <h3>Portfolio Proof</h3>
-            <p>We organize your work, testimonials, results, and case-study style posts so people can see that you are worth trusting.</p>
+            <h3>Social Growth</h3>
+            <p>Growth moves built around visibility, consistency, engagement, and making the page look alive.</p>
           </div>
 
           <div class="service">
             <div class="service-icon">05</div>
-            <h3>DM + Lead Flow</h3>
-            <p>Simple scripts and response paths for people who ask about your service so you stop fumbling potential clients.</p>
+            <h3>Profile Optimization</h3>
+            <p>Bio, highlights, pinned posts, profile layout, call-to-action, and link setup improved for trust.</p>
           </div>
 
           <div class="service">
             <div class="service-icon">06</div>
-            <h3>Weekly Optimization</h3>
-            <p>We keep improving your content, offer, and conversion path based on what your audience actually responds to.</p>
+            <h3>Monthly Improvement</h3>
+            <p>Reviewing what works, what needs to change, and how to keep the page growing cleaner every month.</p>
           </div>
         </div>
       </div>
@@ -1165,55 +906,55 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">Packages</div>
-            <h2>Pick the level that matches your stage.</h2>
+            <h2>Choose how much of the page you want handled.</h2>
           </div>
           <p class="section-copy">
-            These can be adjusted later, but this gives your website a strong starting offer. You can show prices, hide prices, or replace them with “Apply Now.”
+            These are service packages for clients who want Mikye Media to manage, grow, and improve their page.
           </p>
         </div>
 
         <div class="packages reveal">
           <div class="package">
-            <h3>Brand Starter</h3>
-            <p>For freelancers who need their page and offer cleaned up fast.</p>
-            <div class="price">$497 <small>setup</small></div>
+            <h3>Page Cleanup</h3>
+            <p>For brands that need their page fixed before they start scaling.</p>
+            <div class="price">$499 <small>one-time</small></div>
             <ul>
-              <li>Profile audit</li>
+              <li>Page audit</li>
               <li>Bio rewrite</li>
-              <li>Offer positioning</li>
-              <li>Content pillar map</li>
-              <li>Basic client CTA setup</li>
+              <li>Highlight and pinned post direction</li>
+              <li>Profile trust cleanup</li>
+              <li>Basic content direction</li>
             </ul>
             <a class="btn btn-secondary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book Audit</a>
           </div>
 
           <div class="package featured">
             <div class="tag">Best Start</div>
-            <h3>Brand Growth</h3>
-            <p>For freelancers who want the full foundation and content system.</p>
-            <div class="price">$997 <small>monthly</small></div>
+            <h3>Page Management</h3>
+            <p>For brands that want monthly help staying active, clean, and growth-focused.</p>
+            <div class="price">$999 <small>monthly</small></div>
             <ul>
-              <li>Everything in Brand Starter</li>
-              <li>Weekly content strategy</li>
-              <li>Post and reel ideas</li>
-              <li>Story selling prompts</li>
-              <li>DM response scripts</li>
-              <li>Monthly brand optimization</li>
+              <li>Everything in Page Cleanup</li>
+              <li>Monthly content strategy</li>
+              <li>Weekly post ideas and captions</li>
+              <li>Growth direction</li>
+              <li>Story prompts</li>
+              <li>Monthly optimization report</li>
             </ul>
             <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Apply Now</a>
           </div>
 
           <div class="package">
-            <h3>Scale Partner</h3>
-            <p>For freelancers ready to be treated like a serious brand.</p>
+            <h3>Full Brand Scale</h3>
+            <p>For brands that want full social growth direction and stronger online presence.</p>
             <div class="price">$2K+ <small>monthly</small></div>
             <ul>
-              <li>Full brand strategy</li>
-              <li>Content calendar</li>
-              <li>Offer and pricing support</li>
-              <li>Lead flow system</li>
-              <li>Portfolio/case study direction</li>
-              <li>Weekly strategy check-ins</li>
+              <li>Full page management direction</li>
+              <li>Content calendar planning</li>
+              <li>Brand positioning support</li>
+              <li>Growth strategy</li>
+              <li>Offer/profile improvement</li>
+              <li>Weekly strategy support</li>
             </ul>
             <a class="btn btn-secondary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Talk Strategy</a>
           </div>
@@ -1225,18 +966,18 @@
       <div class="shell">
         <div class="results-band reveal">
           <div class="result">
-            <h3>1</h3>
-            <p>Clear freelance offer people can understand in seconds.</p>
+            <h3>01</h3>
+            <p>A cleaner page that makes your brand easier to trust.</p>
           </div>
 
           <div class="result">
-            <h3>30</h3>
-            <p>Days to build a cleaner brand foundation and content direction.</p>
+            <h3>02</h3>
+            <p>A stronger content direction so your page looks active and intentional.</p>
           </div>
 
           <div class="result">
-            <h3>∞</h3>
-            <p>A brand asset that keeps helping you look better, sell easier, and grow stronger.</p>
+            <h3>03</h3>
+            <p>A better growth system so the page has a real plan behind it.</p>
           </div>
         </div>
       </div>
@@ -1247,32 +988,32 @@
         <div class="section-head reveal">
           <div>
             <div class="section-kicker">FAQ</div>
-            <h2>Questions freelancers usually ask.</h2>
+            <h2>Questions clients may ask.</h2>
           </div>
           <p class="section-copy">
-            The goal is to make your brand easier to trust and easier to buy from. Growth is important, but conversion is what turns attention into money.
+            This section keeps the offer clear. They are not buying a course. They are hiring Mikye Media to manage and grow their page.
           </p>
         </div>
 
         <div class="faq reveal">
           <div class="faq-item">
-            <h3>Is this only for influencers?</h3>
-            <p>No. This is for freelancers with a skill who want their page to help them attract clients. Designers, editors, photographers, marketers, coaches, consultants, and service providers can all use this.</p>
+            <h3>Is this a course?</h3>
+            <p>No. Mikye Media is a freelance service. Clients let me manage, improve, and grow their page.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Do I need a big following first?</h3>
-            <p>No. A small page with a clear offer and strong trust signals can beat a large page that looks random. We focus on building the foundation first.</p>
+            <h3>Who is this for?</h3>
+            <p>This is for businesses, creators, personal brands, service providers, and anyone who wants their social page to look better and grow with strategy.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Do you create the content for me?</h3>
-            <p>Depending on the package, Mikye Media can help with strategy, ideas, structure, captions, hooks, and the full direction. The higher-level package can be adjusted for more done-for-you support.</p>
+            <h3>Do I need a big page already?</h3>
+            <p>No. The page can be small, inactive, or messy. The goal is to clean it up, give it direction, and start building growth.</p>
           </div>
 
           <div class="faq-item">
             <h3>What happens on the free audit call?</h3>
-            <p>We look at your current brand, talk about your service, find what is stopping people from trusting or buying, and show you what should be fixed first.</p>
+            <p>I review the current page, show what is hurting growth or trust, and explain what Mikye Media would fix first.</p>
           </div>
         </div>
       </div>
@@ -1281,14 +1022,14 @@
     <section id="book">
       <div class="shell">
         <div class="final-cta reveal">
-          <div class="section-kicker">Ready to look premium?</div>
-          <h2>Build the brand your future clients can take seriously.</h2>
+          <div class="section-kicker">Ready to grow your page?</div>
+          <h2>Let Mikye Media manage and scale your brand online.</h2>
           <p>
-            Book a free brand audit and we will show you what to change first so your freelance page looks cleaner, clearer, and more client-focused.
+            Book a free page audit and I’ll show what needs to be fixed to make your page cleaner, more active, and better positioned for growth.
           </p>
           <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
             <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book Your Free Audit</a>
-            <a class="btn btn-secondary" href="https://instagram.com/mikyemedia" target="_blank" rel="noopener">Instagram </a>
+            <a class="btn btn-secondary" href="https://instagram.com/mikyemedia" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
       </div>
@@ -1298,7 +1039,7 @@
   <footer>
     <div class="footer-inner">
       <div class="logo">MIKYE<span> </span>MEDIA</div>
-      <p>Freelance Brand Scaling · Built for serious freelancers.</p>
+      <p>Freelance Brand Scaling · Page Management · Social Growth</p>
       <div class="footer-links">
         <a href="https://instagram.com/mikyemedia" target="_blank" rel="noopener">Instagram</a>
         <a href="mailto:contact@mikyemedia.com">Email</a>
