@@ -1,573 +1,1324 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mikye Media — Social Media Marketing</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mikye Media — Freelance Brand Scaling</title>
+  <meta name="description" content="Mikye Media helps freelancers turn their skill into a premium online brand that attracts clients, builds trust, and scales revenue." />
 
-  :root {
-    --black: #0A0A0C;
-    --black2: #111114;
-    --gold: #D6C28A;
-    --gold2: #E8B84B;
-    --white: #F4F4F0;
-    --gray: #888888;
-    --border: rgba(214,194,138,0.15);
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  html { scroll-behavior: smooth; }
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    overflow-x: hidden;
-  }
+    :root {
+      --bg: #08080A;
+      --bg-2: #0E0E12;
+      --card: #131318;
+      --card-2: #181820;
+      --text: #F4F0E8;
+      --muted: rgba(244, 240, 232, 0.64);
+      --faint: rgba(244, 240, 232, 0.38);
+      --gold: #D6C28A;
+      --gold-2: #E8B84B;
+      --line: rgba(214, 194, 138, 0.16);
+      --line-soft: rgba(244, 240, 232, 0.08);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      --radius: 24px;
+      --max: 1180px;
+    }
 
-  /* ── NOISE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 48px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(10,10,12,0.85);
-    backdrop-filter: blur(12px);
-  }
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(214, 194, 138, 0.15), transparent 34rem),
+        radial-gradient(circle at 82% 12%, rgba(232, 184, 75, 0.09), transparent 30rem),
+        linear-gradient(180deg, #08080A 0%, #0A0A0D 48%, #070708 100%);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
 
-  .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
-    letter-spacing: 0.04em;
-    color: var(--white);
-    text-decoration: none;
-  }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      z-index: -1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    }
 
-  .nav-logo span { color: var(--gold); }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  .nav-cta {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--black);
-    background: var(--gold);
-    padding: 10px 22px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
-  }
+    .shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-  .nav-cta:hover { background: var(--gold2); transform: translateY(-1px); }
+    .nav {
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid var(--line-soft);
+      background: rgba(8, 8, 10, 0.78);
+      backdrop-filter: blur(18px);
+    }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 48px 80px;
-    position: relative;
-  }
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-  /* gold glow blob */
-  .hero::after {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(ellipse, rgba(214,194,138,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
+    .logo {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-size: 18px;
+    }
 
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.1s forwards;
-  }
+    .logo span {
+      color: var(--gold);
+    }
 
-  .hero-eyebrow::before, .hero-eyebrow::after {
-    content: '';
-    display: block;
-    width: 28px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.5;
-  }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(48px, 8vw, 88px);
-    line-height: 1.0;
-    letter-spacing: -0.02em;
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.25s forwards;
-  }
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
 
-  h1 em {
-    font-style: normal;
-    color: var(--gold);
-  }
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
-  .hero-sub {
-    font-size: clamp(15px, 2vw, 18px);
-    font-weight: 300;
-    color: rgba(244,244,240,0.6);
-    max-width: 520px;
-    line-height: 1.7;
-    margin-bottom: 48px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.4s forwards;
-  }
+    .nav-cta {
+      padding: 11px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--bg);
+      background: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
 
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.55s forwards;
-  }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      background: var(--gold-2);
+    }
 
-  .btn-primary {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--black);
-    background: var(--gold);
-    padding: 16px 36px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  }
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 154px 0 86px;
+      display: flex;
+      align-items: center;
+    }
 
-  .btn-primary:hover {
-    background: var(--gold2);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(214,194,138,0.25);
-  }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 56px;
+      align-items: center;
+    }
 
-  .btn-ghost {
-    font-size: 13px;
-    font-weight: 400;
-    color: rgba(244,244,240,0.5);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    border-bottom: 1px solid rgba(244,244,240,0.2);
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-  }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      border: 1px solid var(--line);
+      background: rgba(214, 194, 138, 0.06);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
 
-  .btn-ghost:hover { color: var(--white); border-color: var(--white); }
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(214, 194, 138, 0.75);
+    }
 
-  /* ── STATS BAR ── */
-  .stats {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    margin-top: 80px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.7s forwards;
-  }
+    h1, h2, h3 {
+      font-family: "Syne", sans-serif;
+      letter-spacing: -0.04em;
+    }
 
-  .stat {
-    flex: 1;
-    max-width: 200px;
-    text-align: center;
-    padding: 28px 20px;
-    border-right: 1px solid var(--border);
-  }
+    h1 {
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: 0.94;
+      margin-bottom: 26px;
+      max-width: 760px;
+    }
 
-  .stat:last-child { border-right: none; }
+    .gold {
+      color: var(--gold);
+    }
 
-  .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: var(--gold);
-    display: block;
-    margin-bottom: 4px;
-  }
+    .hero-copy {
+      color: var(--muted);
+      font-size: clamp(16px, 1.6vw, 20px);
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
 
-  .stat-label {
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 36px;
+    }
 
-  /* ── SERVICES ── */
-  .services {
-    padding: 100px 48px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 15px 22px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
 
-  .section-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg);
+      box-shadow: 0 18px 46px rgba(214, 194, 138, 0.18);
+    }
 
-  .section-label::after {
-    content: '';
-    display: block;
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-    max-width: 60px;
-  }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--gold-2);
+    }
 
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: clamp(28px, 4vw, 42px);
-    line-height: 1.15;
-    margin-bottom: 60px;
-    max-width: 480px;
-  }
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(214, 194, 138, 0.42);
+    }
 
-  .service-card {
-    background: var(--black2);
-    padding: 40px 32px;
-    border: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s;
-    cursor: default;
-  }
+    .proof-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
+    .proof-pill {
+      border: 1px solid var(--line-soft);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      color: var(--muted);
+      padding: 10px 13px;
+      font-size: 13px;
+    }
 
-  .service-card:hover { border-color: rgba(214,194,138,0.4); transform: translateY(-3px); }
-  .service-card:hover::before { transform: scaleX(1); }
+    .hero-card {
+      position: relative;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+        rgba(19, 19, 24, 0.78);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
 
-  .service-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-    opacity: 0.6;
-    margin-bottom: 20px;
-  }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, rgba(214,194,138,0.28), transparent 35%, transparent 65%, rgba(214,194,138,0.14));
+      pointer-events: none;
+      opacity: 0.55;
+    }
 
-  .service-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 12px;
-    color: var(--white);
-  }
+    .card-content {
+      position: relative;
+      z-index: 1;
+    }
 
-  .service-desc {
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(244,244,240,0.5);
-  }
+    .mini-label {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
 
-  /* ── HOW IT WORKS ── */
-  .process {
-    padding: 100px 48px;
-    border-top: 1px solid var(--border);
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+    .audit-card {
+      padding: 18px;
+      border: 1px solid var(--line-soft);
+      border-radius: 18px;
+      background: rgba(8,8,10,0.48);
+      margin-bottom: 16px;
+    }
 
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    margin-top: 60px;
-  }
+    .audit-card h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
 
-  .step {
-    position: relative;
-  }
+    .audit-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-  .step-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
-    color: rgba(214,194,138,0.12);
-    line-height: 1;
-    margin-bottom: 16px;
-  }
+    .score-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
 
-  .step-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: var(--white);
-  }
+    .score {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 13px;
+      border: 1px solid var(--line-soft);
+      border-radius: 15px;
+      background: rgba(255,255,255,0.025);
+    }
 
-  .step-desc {
-    font-size: 13px;
-    line-height: 1.7;
-    color: rgba(244,244,240,0.45);
-  }
+    .score strong {
+      font-size: 14px;
+    }
 
-  /* ── CTA SECTION ── */
-  .cta-section {
-    margin: 0 48px 100px;
-    padding: 80px 60px;
-    background: var(--black2);
-    border: 1px solid var(--border);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+    .score span {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+    }
 
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
+    .bar {
+      grid-column: 1 / -1;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
 
-  .cta-section::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 300px;
-    background: radial-gradient(ellipse, rgba(214,194,138,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
+    .bar i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--gold), var(--gold-2));
+    }
 
-  .cta-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(28px, 4vw, 48px);
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
+    section {
+      padding: 96px 0;
+    }
 
-  .cta-title em { font-style: normal; color: var(--gold); }
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
 
-  .cta-sub {
-    font-size: 15px;
-    font-weight: 300;
-    color: rgba(244,244,240,0.5);
-    margin-bottom: 40px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-  }
+    .section-kicker {
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    h2 {
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 0.98;
+    }
 
-  .footer-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--white);
-  }
+    .section-copy {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 620px;
+    }
 
-  .footer-logo span { color: var(--gold); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255,255,255,0.025);
+    }
 
-  footer p {
-    font-size: 12px;
-    color: var(--gray);
-    letter-spacing: 0.04em;
-  }
+    .problem {
+      padding: 28px;
+      border-right: 1px solid var(--line-soft);
+      min-height: 210px;
+    }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+    .problem:last-child {
+      border-right: 0;
+    }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    nav { padding: 20px 24px; }
-    .hero { padding: 100px 24px 60px; }
-    .services, .process { padding: 60px 24px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .process-steps { grid-template-columns: 1fr 1fr; gap: 28px; }
-    .cta-section { margin: 0 24px 60px; padding: 48px 28px; }
-    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
-    .stats { flex-wrap: wrap; }
-    .stat { min-width: 140px; }
-  }
-</style>
+    .problem-num {
+      color: var(--gold);
+      font-family: "Syne", sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      margin-bottom: 20px;
+    }
+
+    .problem h3 {
+      font-size: 21px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .problem p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .offer {
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 34px;
+      background:
+        radial-gradient(circle at top right, rgba(214,194,138,0.14), transparent 32rem),
+        rgba(19,19,24,0.72);
+      box-shadow: var(--shadow);
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .offer-main {
+      padding: 30px;
+      border-radius: 24px;
+      background: rgba(8,8,10,0.52);
+      border: 1px solid var(--line-soft);
+    }
+
+    .offer-main h3 {
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .offer-main p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .deliverables {
+      display: grid;
+      gap: 12px;
+    }
+
+    .deliverable {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 15px;
+      border: 1px solid var(--line-soft);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .check {
+      color: var(--bg);
+      background: var(--gold);
+      width: 21px;
+      height: 21px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+      margin-top: 2px;
+      font-size: 13px;
+    }
+
+    .deliverable strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 15px;
+    }
+
+    .deliverable span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      padding: 24px;
+      border: 1px solid var(--line-soft);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.025);
+      min-height: 235px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(214,194,138,0.35);
+    }
+
+    .step-num {
+      font-family: "Syne", sans-serif;
+      color: rgba(214, 194, 138, 0.28);
+      font-size: 46px;
+      line-height: 1;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service {
+      padding: 26px;
+      border-radius: 22px;
+      border: 1px solid var(--line-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.018));
+      min-height: 245px;
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(214, 194, 138, 0.12);
+      color: var(--gold);
+      margin-bottom: 24px;
+      font-weight: 900;
+    }
+
+    .service h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .package {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      border: 1px solid var(--line-soft);
+      border-radius: 26px;
+      background: rgba(255,255,255,0.025);
+      min-height: 470px;
+    }
+
+    .package.featured {
+      border-color: rgba(214,194,138,0.42);
+      background:
+        radial-gradient(circle at top, rgba(214,194,138,0.13), transparent 24rem),
+        rgba(19,19,24,0.78);
+      box-shadow: 0 20px 70px rgba(0,0,0,0.32);
+    }
+
+    .tag {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: var(--bg);
+      background: var(--gold);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .package h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .package p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .price {
+      font-family: "Syne", sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .package ul {
+      display: grid;
+      gap: 11px;
+      margin: 24px 0 26px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .package li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .package li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .package .btn {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .results-band {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background:
+        linear-gradient(90deg, rgba(214,194,138,0.11), rgba(255,255,255,0.025)),
+        rgba(19,19,24,0.72);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .result h3 {
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .result p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line-soft);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.025);
+      padding: 22px;
+    }
+
+    .faq-item h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 70px 34px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(214,194,138,0.18), transparent 30rem),
+        rgba(19,19,24,0.78);
+      box-shadow: var(--shadow);
+    }
+
+    .final-cta h2 {
+      max-width: 800px;
+      margin: 0 auto 18px;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 17px;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      color: var(--faint);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 130px;
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .section-head,
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-grid,
+      .steps,
+      .services-grid,
+      .packages,
+      .results-band {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .problem:nth-child(2) {
+        border-right: 0;
+      }
+
+      .problem {
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .problem:nth-child(3),
+      .problem:nth-child(4) {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell,
+      .nav-inner,
+      .footer-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-inner {
+        height: 68px;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .nav-cta {
+        padding: 10px 13px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 112px 0 58px;
+      }
+
+      h1 {
+        font-size: clamp(43px, 16vw, 64px);
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 15px 18px;
+      }
+
+      .hero-card {
+        padding: 18px;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .problem-grid,
+      .steps,
+      .services-grid,
+      .packages,
+      .results-band {
+        grid-template-columns: 1fr;
+      }
+
+      .problem,
+      .problem:nth-child(2),
+      .problem:nth-child(3) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .problem:nth-child(4) {
+        border-bottom: 0;
+      }
+
+      .offer {
+        padding: 18px;
+        border-radius: 24px;
+      }
+
+      .offer-main {
+        padding: 22px;
+      }
+
+      .package {
+        min-height: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">MIKYE<span></span>MEDIA</a>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">MIKYE<span>.</span>MEDIA</a>
-  <a href="#book" class="nav-cta">Book a Free Call</a>
-</nav>
+      <div class="nav-links">
+        <a href="#offer">Offer</a>
+        <a href="#process">Process</a>
+        <a href="#packages">Packages</a>
+        <a href="#faq">FAQ</a>
+      </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-eyebrow">Social Media Marketing</div>
-  <h1>We Build Brands<br>That <em>Stop</em><br>The Scroll.</h1>
-  <p class="hero-sub">Mikye Media helps businesses all over the country blow up on Instagram and TikTok — more followers, more customers, more revenue, all handled for you.</p>
-  <div class="hero-actions">
-    <a href="#book" class="btn-primary">Book a Free Call</a>
-    <a href="#services" class="btn-ghost">See what we do</a>
-  </div>
+      <a class="nav-cta" href="https://calendly.com/mikyemedia/free-call" target="_blank" rel="noopener">Free Call</a>
+    </div>
+  </header>
 
-  <div class="stats">
-    <div class="stat">
-      <span class="stat-num">100%</span>
-      <span class="stat-label">Done For You</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">30-Day</span>
-      <span class="stat-label">Results Guarantee</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">2</span>
-      <span class="stat-label">Platforms Mastered</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">$0</span>
-      <span class="stat-label">To Get Started</span>
-    </div>
-  </div>
-</section>
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-left reveal">
+          <div class="eyebrow">Freelance Brand Scaling</div>
+          <h1>Turn your skill into a <span class="gold">client-getting brand.</span></h1>
+          <p class="hero-copy">
+            Mikye Media helps freelancers look premium, build trust online, and create a simple content system that brings in better clients without looking desperate in DMs.
+          </p>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-label">What We Do</div>
-  <h2 class="section-title">Everything your brand needs to grow.</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-title">Content Creation</div>
-      <p class="service-desc">Posts, Reels, and captions crafted and delivered every week. You focus on your business — we handle the content.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-title">Account Growth</div>
-      <p class="service-desc">We grow your following and engagement with a proven strategy built for the current algorithm — not 2020.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-title">Monthly Reporting</div>
-      <p class="service-desc">Clear results every single month so you always know exactly what's working and where your money is going.</p>
-    </div>
-  </div>
-</section>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://calendly.com/mikyemedia/free-call" target="_blank" rel="noopener">Book a Free Brand Audit</a>
+            <a class="btn btn-secondary" href="#offer">See the System</a>
+          </div>
 
-<!-- PROCESS -->
-<section class="process">
-  <div class="section-label">How It Works</div>
-  <h2 class="section-title">Up and running in days, not months.</h2>
-  <div class="process-steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-title">Book a Free Call</div>
-      <p class="step-desc">We learn your business, your goals, and your audience in a 30-minute call.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-title">We Build Your Strategy</div>
-      <p class="step-desc">Custom content plan and growth strategy built specifically for your brand.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-title">We Execute</div>
-      <p class="step-desc">Posts go live, engagement grows, your audience builds. All handled by us.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-title">You See Results</div>
-      <p class="step-desc">Monthly report with real numbers. More followers, more reach, more customers.</p>
-    </div>
-  </div>
-</section>
+          <div class="proof-row">
+            <div class="proof-pill">Personal brand setup</div>
+            <div class="proof-pill">Content strategy</div>
+            <div class="proof-pill">Client attraction</div>
+          </div>
+        </div>
 
-<!-- CTA -->
-<section class="cta-section" id="book">
-  <h2 class="cta-title">Ready to <em>grow</em>?<br>Let's talk.</h2>
-  <p class="cta-sub">Book a free 30-minute call. No pitch, no pressure — just a conversation about what's possible for your brand.</p>
-  <a href="https://calendly.com/mikye-mikyemedia/discovery-call" class="btn-primary" target="_blank">Book a Free Call</a>
-</section>
+        <aside class="hero-card reveal">
+          <div class="card-content">
+            <div class="mini-label">The Mikye Media Method</div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">MIKYE<span>.</span>MEDIA</div>
-  <p>mikye@mikyemedia.com</p>
-  <p>© 2026 Mikye Media</p>
-</footer>
+            <div class="audit-card">
+              <h3>Brand Scale Snapshot</h3>
+              <p>We find what is making your page look low-value, then rebuild your offer, profile, content, and client path.</p>
 
+              <div class="score-list">
+                <div class="score">
+                  <strong>Profile Trust</strong>
+                  <span>92%</span>
+                  <div class="bar"><i style="width:92%"></i></div>
+                </div>
+
+                <div class="score">
+                  <strong>Offer Clarity</strong>
+                  <span>88%</span>
+                  <div class="bar"><i style="width:88%"></i></div>
+                </div>
+
+                <div class="score">
+                  <strong>Client Path</strong>
+                  <span>95%</span>
+                  <div class="bar"><i style="width:95%"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="deliverable">
+              <span class="check">✓</span>
+              <div>
+                <strong>Goal: look like the obvious choice.</strong>
+                <span>Not just “post more.” Build a brand that makes people trust you before they ever message you.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="problem">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">The Problem</div>
+            <h2>Most freelancers are skilled but their brand looks average.</h2>
+          </div>
+          <p class="section-copy">
+            Your page can quietly make people take you seriously or instantly make them scroll past you. The difference is usually not talent. It is positioning, proof, content, and the way your offer is presented.
+          </p>
+        </div>
+
+        <div class="problem-grid reveal">
+          <div class="problem">
+            <div class="problem-num">01</div>
+            <h3>Your bio does not sell.</h3>
+            <p>People land on your page but do not understand who you help, what you do, or why they should trust you.</p>
+          </div>
+
+          <div class="problem">
+            <div class="problem-num">02</div>
+            <h3>Your content feels random.</h3>
+            <p>You post when you feel like it, but there is no system that builds authority and leads people toward buying.</p>
+          </div>
+
+          <div class="problem">
+            <div class="problem-num">03</div>
+            <h3>Your offer sounds basic.</h3>
+            <p>If your service sounds like everyone else’s, people compare you on price instead of value.</p>
+          </div>
+
+          <div class="problem">
+            <div class="problem-num">04</div>
+            <h3>You have no client path.</h3>
+            <p>Views and followers do not matter if there is no simple way for prospects to book, message, or become clients.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer">
+      <div class="shell">
+        <div class="offer reveal">
+          <div class="offer-grid">
+            <div class="offer-main">
+              <div class="section-kicker">The Offer</div>
+              <h3>Freelance Brand Scaling</h3>
+              <p>
+                A done-with-you or done-for-you system for freelancers who want to turn their skill into a cleaner brand, stronger offer, better content, and more serious client opportunities.
+              </p>
+              <a class="btn btn-primary" href="https://calendly.com/mikyemedia/free-call" target="_blank" rel="noopener">Get Your Free Audit</a>
+            </div>
+
+            <div class="deliverables">
+              <div class="deliverable">
+                <span class="check">✓</span>
+                <div>
+                  <strong>Brand Positioning</strong>
+                  <span>We make your page instantly explain who you help, what result you create, and why your work is worth paying for.</span>
+                </div>
+              </div>
+
+              <div class="deliverable">
+                <span class="check">✓</span>
+                <div>
+                  <strong>Offer Buildout</strong>
+                  <span>We package your service so it feels more valuable, easier to understand, and easier to sell.</span>
+                </div>
+              </div>
+
+              <div class="deliverable">
+                <span class="check">✓</span>
+                <div>
+                  <strong>Content System</strong>
+                  <span>We build content pillars, post ideas, hooks, and a weekly structure so your page grows with purpose.</span>
+                </div>
+              </div>
+
+              <div class="deliverable">
+                <span class="check">✓</span>
+                <div>
+                  <strong>Client Conversion Path</strong>
+                  <span>We connect your profile, call-to-action, booking link, portfolio, and DM script into one simple client path.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">The Process</div>
+            <h2>Simple steps. Clear direction. Better clients.</h2>
+          </div>
+          <p class="section-copy">
+            This is not random posting or fake motivation. It is a focused system to make your freelance brand look trusted, premium, and ready for real buyers.
+          </p>
+        </div>
+
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3>Audit</h3>
+            <p>We review your current page, offer, content, and client flow to find exactly what is blocking trust and conversions.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3>Position</h3>
+            <p>We define your niche, promise, target client, profile message, and the reason people should choose you.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3>Build</h3>
+            <p>We create your profile structure, content plan, offer layout, proof strategy, and client call-to-action.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-num">04</div>
+            <h3>Scale</h3>
+            <p>We improve weekly using content performance, audience response, and client conversations so your brand keeps leveling up.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">What We Build</div>
+            <h2>Everything your freelance brand needs to look legit.</h2>
+          </div>
+          <p class="section-copy">
+            Mikye Media is made for freelancers who do not just want followers. You want your page to make people trust you, message you, and eventually pay you.
+          </p>
+        </div>
+
+        <div class="services-grid reveal">
+          <div class="service">
+            <div class="service-icon">01</div>
+            <h3>Profile Makeover</h3>
+            <p>Bio, highlights, pinned posts, profile photo direction, link structure, and page cleanup so your first impression feels premium.</p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">02</div>
+            <h3>Offer Positioning</h3>
+            <p>We help turn your skill into a clear offer with a stronger promise, better pricing logic, and a cleaner reason to buy.</p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">03</div>
+            <h3>Content Strategy</h3>
+            <p>Content pillars, hooks, post ideas, story prompts, and weekly posting direction built around getting clients, not just likes.</p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">04</div>
+            <h3>Portfolio Proof</h3>
+            <p>We organize your work, testimonials, results, and case-study style posts so people can see that you are worth trusting.</p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">05</div>
+            <h3>DM + Lead Flow</h3>
+            <p>Simple scripts and response paths for people who ask about your service so you stop fumbling potential clients.</p>
+          </div>
+
+          <div class="service">
+            <div class="service-icon">06</div>
+            <h3>Weekly Optimization</h3>
+            <p>We keep improving your content, offer, and conversion path based on what your audience actually responds to.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Packages</div>
+            <h2>Pick the level that matches your stage.</h2>
+          </div>
+          <p class="section-copy">
+            These can be adjusted later, but this gives your website a strong starting offer. You can show prices, hide prices, or replace them with “Apply Now.”
+          </p>
+        </div>
+
+        <div class="packages reveal">
+          <div class="package">
+            <h3>Brand Starter</h3>
+            <p>For freelancers who need their page and offer cleaned up fast.</p>
+            <div class="price">$497 <small>setup</small></div>
+            <ul>
+              <li>Profile audit</li>
+              <li>Bio rewrite</li>
+              <li>Offer positioning</li>
+              <li>Content pillar map</li>
+              <li>Basic client CTA setup</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://calendly.com/mikyemedia/free-call" target="_blank" rel="noopener">Book Audit</a>
+          </div>
+
+          <div class="package featured">
+            <div class="tag">Best Start</div>
+            <h3>Brand Growth</h3>
+            <p>For freelancers who want the full foundation and content system.</p>
+            <div class="price">$997 <small>monthly</small></div>
+            <ul>
+              <li>Everything in Brand Starter</li>
+              <li>Weekly content strategy</li>
+              <li>Post and reel ideas</li>
+              <li>Story selling prompts</li>
+              <li>DM response scripts</li>
+              <li>Monthly brand optimization</li>
+            </ul>
+            <a class="btn btn-primary" href="https://calendly.com/mikyemedia/free-call" target="_blank" rel="noopener">Apply Now</a>
+          </div>
+
+          <div class="package">
+            <h3>Scale Partner</h3>
+            <p>For freelancers ready to be treated like a serious brand.</p>
+            <div class="price">$2K+ <small>monthly</small></div>
+            <ul>
+              <li>Full brand strategy</li>
+              <li>Content calendar</li>
+              <li>Offer and pricing support</li>
+              <li>Lead flow system</li>
+              <li>Portfolio/case study direction</li>
+              <li>Weekly strategy check-ins</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://calendly.com/mikyemedia/free-call" target="_blank" rel="noopener">Talk Strategy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="shell">
+        <div class="results-band reveal">
+          <div class="result">
+            <h3>1</h3>
+            <p>Clear freelance offer people can understand in seconds.</p>
+          </div>
+
+          <div class="result">
+            <h3>30</h3>
+            <p>Days to build a cleaner brand foundation and content direction.</p>
+          </div>
+
+          <div class="result">
+            <h3>∞</h3>
+            <p>A brand asset that keeps helping you look better, sell easier, and grow stronger.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">FAQ</div>
+            <h2>Questions freelancers usually ask.</h2>
+          </div>
+          <p class="section-copy">
+            The goal is to make your brand easier to trust and easier to buy from. Growth is important, but conversion is what turns attention into money.
+          </p>
+        </div>
+
+        <div class="faq reveal">
+          <div class="faq-item">
+            <h3>Is this only for influencers?</h3>
+            <p>No. This is for freelancers with a skill who want their page to help them attract clients. Designers, editors, photographers, marketers, coaches, consultants, and service providers can all use this.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do I need a big following first?</h3>
+            <p>No. A small page with a clear offer and strong trust signals can beat a large page that looks random. We focus on building the foundation first.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you create the content for me?</h3>
+            <p>Depending on the package, Mikye Media can help with strategy, ideas, structure, captions, hooks, and the full direction. The higher-level package can be adjusted for more done-for-you support.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What happens on the free audit call?</h3>
+            <p>We look at your current brand, talk about your service, find what is stopping people from trusting or buying, and show you what should be fixed first.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="shell">
+        <div class="final-cta reveal">
+          <div class="section-kicker">Ready to look premium?</div>
+          <h2>Build the brand your future clients can take seriously.</h2>
+          <p>
+            Book a free brand audit and we will show you what to change first so your freelance page looks cleaner, clearer, and more client-focused.
+          </p>
+          <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
+            <a class="btn btn-primary" href="https://calendly.com/mikyemedia/free-call" target="_blank" rel="noopener">Book Your Free Audit</a>
+            <a class="btn btn-secondary" href="https://instagram.com/mikyemedia" target="_blank" rel="noopener">Instagram @mikyemedia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="logo">MIKYE<span></span>MEDIA</div>
+      <p>Freelance Brand Scaling · Built for serious freelancers.</p>
+      <div class="footer-links">
+        <a href="https://instagram.com/mikyemedia" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:contact@mikyemedia.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
