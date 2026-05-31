@@ -3,39 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mikye Media — Social Media Marketing</title>
-  <meta name="description" content="Mikye Media helps businesses, creators, and personal brands grow online through social media management, content strategy, social growth, and brand positioning." />
+  <title>Mikye Media — Brand Growth & Social Media</title>
+  <meta name="description" content="Mikye Media helps brands, creators, and small businesses clean up their Instagram, plan better content, and turn attention into customers." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg: #08080A;
-      --card: #131318;
+      --card: #121217;
       --text: #F4F0E8;
-      --muted: rgba(244, 240, 232, 0.64);
-      --faint: rgba(244, 240, 232, 0.38);
+      --muted: rgba(244, 240, 232, 0.68);
+      --faint: rgba(244, 240, 232, 0.42);
       --gold: #D6C28A;
       --gold-2: #E8B84B;
-      --line: rgba(214, 194, 138, 0.16);
-      --line-soft: rgba(244, 240, 232, 0.08);
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
-      --max: 1180px;
+      --line: rgba(214, 194, 138, 0.18);
+      --soft-line: rgba(244, 240, 232, 0.09);
+      --max: 1120px;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      background:
-        radial-gradient(circle at top left, rgba(214, 194, 138, 0.15), transparent 34rem),
-        radial-gradient(circle at 82% 12%, rgba(232, 184, 75, 0.09), transparent 30rem),
-        linear-gradient(180deg, #08080A 0%, #0A0A0D 48%, #070708 100%);
+      min-height: 100vh;
       color: var(--text);
       font-family: "DM Sans", sans-serif;
-      overflow-x: hidden;
       line-height: 1.5;
+      background:
+        radial-gradient(circle at top left, rgba(214, 194, 138, 0.15), transparent 32rem),
+        radial-gradient(circle at 85% 10%, rgba(232, 184, 75, 0.08), transparent 28rem),
+        linear-gradient(180deg, #08080A 0%, #0B0B0E 55%, #070708 100%);
+      overflow-x: hidden;
     }
 
     body::before {
@@ -43,12 +49,15 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.35;
+      opacity: 0.32;
       z-index: -1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .shell {
       width: min(var(--max), calc(100% - 40px));
@@ -57,72 +66,81 @@
 
     .nav {
       position: fixed;
-      z-index: 50;
       top: 0;
       left: 0;
       right: 0;
-      border-bottom: 1px solid var(--line-soft);
+      z-index: 50;
+      border-bottom: 1px solid var(--soft-line);
       background: rgba(8, 8, 10, 0.78);
       backdrop-filter: blur(18px);
     }
 
     .nav-inner {
       width: min(var(--max), calc(100% - 40px));
+      height: 72px;
       margin: 0 auto;
-      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
     }
 
     .logo {
       font-family: "Syne", sans-serif;
+      font-size: 17px;
       font-weight: 800;
-      letter-spacing: 0.04em;
-      font-size: 18px;
+      letter-spacing: 0.05em;
     }
 
-    .logo span { color: var(--gold); }
+    .logo span {
+      color: var(--gold);
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
       color: var(--muted);
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
-    .nav-links a { transition: color 0.2s ease; }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     .nav-cta {
-      padding: 11px 18px;
+      padding: 11px 17px;
       border-radius: 999px;
       color: var(--bg);
       background: var(--gold);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       transition: transform 0.2s ease, background 0.2s ease;
     }
 
-    .nav-cta:hover { transform: translateY(-1px); background: var(--gold-2); }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      background: var(--gold-2);
+    }
+
+    main {
+      padding-top: 72px;
+    }
 
     .hero {
-      position: relative;
-      min-height: 100vh;
-      padding: 154px 0 86px;
+      min-height: calc(100vh - 72px);
       display: flex;
       align-items: center;
+      padding: 84px 0 64px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.08fr 0.92fr;
-      gap: 56px;
+      gap: 48px;
       align-items: center;
     }
 
@@ -130,16 +148,16 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: var(--gold);
-      border: 1px solid var(--line);
-      background: rgba(214, 194, 138, 0.06);
-      border-radius: 999px;
+      margin-bottom: 22px;
       padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(214, 194, 138, 0.06);
+      color: var(--gold);
       font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.11em;
+      font-weight: 900;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      margin-bottom: 24px;
     }
 
     .eyebrow::before {
@@ -148,7 +166,7 @@
       height: 7px;
       border-radius: 999px;
       background: var(--gold);
-      box-shadow: 0 0 18px rgba(214, 194, 138, 0.75);
+      box-shadow: 0 0 18px rgba(214, 194, 138, 0.8);
     }
 
     h1, h2, h3 {
@@ -157,19 +175,26 @@
     }
 
     h1 {
-      font-size: clamp(48px, 7vw, 92px);
-      line-height: 0.94;
-      margin-bottom: 26px;
-      max-width: 780px;
+      max-width: 790px;
+      margin-bottom: 24px;
+      font-size: clamp(46px, 7vw, 86px);
+      line-height: 0.95;
     }
 
-    .gold { color: var(--gold); }
+    h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+    }
+
+    .gold {
+      color: var(--gold);
+    }
 
     .hero-copy {
+      max-width: 650px;
+      margin-bottom: 32px;
       color: var(--muted);
       font-size: clamp(16px, 1.6vw, 20px);
-      max-width: 650px;
-      margin-bottom: 34px;
     }
 
     .hero-actions {
@@ -177,464 +202,418 @@
       flex-wrap: wrap;
       gap: 14px;
       align-items: center;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       border-radius: 999px;
       padding: 15px 22px;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
     .btn-primary {
-      background: var(--gold);
       color: var(--bg);
+      background: var(--gold);
       box-shadow: 0 18px 46px rgba(214, 194, 138, 0.18);
     }
 
-    .btn-primary:hover { transform: translateY(-2px); background: var(--gold-2); }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: var(--gold-2);
+    }
 
     .btn-secondary {
       border: 1px solid var(--line);
       color: var(--text);
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
     }
 
-    .btn-secondary:hover { transform: translateY(-2px); border-color: rgba(214, 194, 138, 0.42); }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(214, 194, 138, 0.42);
+    }
 
-    .proof-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .mini-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-    .proof-pill {
-      border: 1px solid var(--line-soft);
-      background: rgba(255,255,255,0.03);
+    .mini-proof span {
+      padding: 9px 12px;
+      border: 1px solid var(--soft-line);
       border-radius: 999px;
+      background: rgba(255, 255, 255, 0.025);
       color: var(--muted);
-      padding: 10px 13px;
       font-size: 13px;
     }
 
-    .hero-card {
-      position: relative;
-      padding: 26px;
+    .audit-card {
       border: 1px solid var(--line);
-      border-radius: 24px;
+      border-radius: 26px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
-        rgba(19, 19, 24, 0.78);
-      box-shadow: var(--shadow);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+        rgba(18, 18, 23, 0.84);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+      padding: 26px;
       overflow: hidden;
+      position: relative;
     }
 
-    .hero-card::before {
+    .audit-card::before {
       content: "";
       position: absolute;
       inset: -1px;
-      background: linear-gradient(135deg, rgba(214,194,138,0.28), transparent 35%, transparent 65%, rgba(214,194,138,0.14));
-      pointer-events: none;
+      background: linear-gradient(135deg, rgba(214, 194, 138, 0.26), transparent 36%, rgba(214, 194, 138, 0.08));
       opacity: 0.55;
+      pointer-events: none;
     }
 
-    .card-content { position: relative; z-index: 1; }
+    .audit-inner {
+      position: relative;
+      z-index: 1;
+    }
 
-    .mini-label {
+    .card-kicker {
+      margin-bottom: 14px;
       color: var(--gold);
       font-size: 12px;
       font-weight: 900;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 14px;
     }
 
-    .dashboard {
-      padding: 18px;
-      border: 1px solid var(--line-soft);
-      border-radius: 18px;
-      background: rgba(8,8,10,0.48);
-      margin-bottom: 16px;
+    .audit-card h3 {
+      margin-bottom: 10px;
+      font-size: 30px;
+      line-height: 1.05;
     }
 
-    .dashboard h3 { font-size: 24px; margin-bottom: 8px; }
-    .dashboard p { color: var(--muted); font-size: 14px; }
+    .audit-card p {
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
 
-    .metric-list { display: grid; gap: 10px; margin-top: 18px; }
-
-    .metric {
+    .audit-list {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 14px;
-      align-items: center;
+      gap: 11px;
+      margin-bottom: 22px;
+      list-style: none;
+    }
+
+    .audit-list li {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
       padding: 13px;
-      border: 1px solid var(--line-soft);
+      border: 1px solid var(--soft-line);
       border-radius: 15px;
-      background: rgba(255,255,255,0.025);
+      background: rgba(8, 8, 10, 0.42);
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    .metric strong { font-size: 14px; }
-    .metric span { color: var(--gold); font-size: 13px; font-weight: 900; }
-
-    .bar {
-      grid-column: 1 / -1;
-      height: 7px;
+    .audit-list li::before {
+      content: "✓";
+      color: var(--bg);
+      background: var(--gold);
+      width: 20px;
+      height: 20px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.07);
-      overflow: hidden;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-weight: 900;
+      font-size: 12px;
+      margin-top: 1px;
     }
 
-    .bar i {
-      display: block;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--gold), var(--gold-2));
+    section {
+      padding: 78px 0;
     }
-
-    section { padding: 96px 0; }
 
     .section-head {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 40px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
       align-items: end;
-      margin-bottom: 42px;
+      margin-bottom: 34px;
     }
 
-    .section-kicker {
+    .kicker {
+      margin-bottom: 12px;
       color: var(--gold);
+      font-size: 12px;
       font-weight: 900;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      font-size: 12px;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 5vw, 64px);
-      line-height: 0.98;
     }
 
     .section-copy {
+      max-width: 650px;
       color: var(--muted);
       font-size: 17px;
-      max-width: 650px;
     }
 
-    .problem-grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--line-soft);
-      border-radius: 24px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.025);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
     }
 
-    .problem {
-      padding: 28px;
-      border-right: 1px solid var(--line-soft);
+    .card {
       min-height: 210px;
+      padding: 24px;
+      border: 1px solid var(--soft-line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.016));
     }
 
-    .problem:last-child { border-right: 0; }
-
-    .problem-num {
-      color: var(--gold);
-      font-family: "Syne", sans-serif;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+    .card-num {
       margin-bottom: 20px;
+      color: rgba(214, 194, 138, 0.36);
+      font-family: "Syne", sans-serif;
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 900;
     }
 
-    .problem h3 { font-size: 21px; line-height: 1.1; margin-bottom: 12px; }
-    .problem p { color: var(--muted); font-size: 14px; }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
 
-    .offer {
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .offer-box {
       border: 1px solid var(--line);
-      border-radius: 32px;
+      border-radius: 30px;
       padding: 34px;
       background:
-        radial-gradient(circle at top right, rgba(214,194,138,0.14), transparent 32rem),
-        rgba(19,19,24,0.72);
-      box-shadow: var(--shadow);
+        radial-gradient(circle at top right, rgba(214, 194, 138, 0.13), transparent 30rem),
+        rgba(18, 18, 23, 0.76);
+      box-shadow: 0 22px 72px rgba(0, 0, 0, 0.32);
     }
 
     .offer-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 26px;
-      align-items: stretch;
+      gap: 24px;
+      align-items: center;
     }
 
-    .offer-main {
-      padding: 30px;
-      border-radius: 24px;
-      background: rgba(8,8,10,0.52);
-      border: 1px solid var(--line-soft);
+    .offer-box h2 {
+      margin-bottom: 16px;
     }
 
-    .offer-main h3 { font-size: 34px; margin-bottom: 14px; }
-    .offer-main p { color: var(--muted); margin-bottom: 24px; }
+    .offer-box p {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
 
-    .deliverables { display: grid; gap: 12px; }
-
-    .deliverable {
-      display: flex;
+    .simple-list {
+      display: grid;
       gap: 12px;
-      align-items: flex-start;
+      list-style: none;
+    }
+
+    .simple-list li {
       padding: 15px;
-      border: 1px solid var(--line-soft);
+      border: 1px solid var(--soft-line);
       border-radius: 16px;
-      background: rgba(255,255,255,0.025);
+      background: rgba(255, 255, 255, 0.025);
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    .check {
-      color: var(--bg);
-      background: var(--gold);
-      width: 21px;
-      height: 21px;
-      border-radius: 999px;
-      display: inline-grid;
-      place-items: center;
+    .simple-list strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .simple-list li::before {
+      content: "✓ ";
+      color: var(--gold);
       font-weight: 900;
-      flex: 0 0 auto;
-      margin-top: 2px;
-      font-size: 13px;
     }
 
-    .deliverable strong { display: block; margin-bottom: 3px; font-size: 15px; }
-    .deliverable span { color: var(--muted); font-size: 14px; }
-
-    .steps {
+    .who-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      gap: 13px;
     }
 
-    .step {
-      padding: 24px;
-      border: 1px solid var(--line-soft);
-      border-radius: 22px;
-      background: rgba(255,255,255,0.025);
-      min-height: 235px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .step:hover { transform: translateY(-4px); border-color: rgba(214,194,138,0.35); }
-
-    .step-num {
-      font-family: "Syne", sans-serif;
-      color: rgba(214, 194, 138, 0.28);
-      font-size: 46px;
-      line-height: 1;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-
-    .step h3 { font-size: 21px; margin-bottom: 10px; }
-    .step p { color: var(--muted); font-size: 14px; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .service {
-      padding: 26px;
-      border-radius: 22px;
-      border: 1px solid var(--line-soft);
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.018));
-      min-height: 245px;
-    }
-
-    .service-icon {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: rgba(214, 194, 138, 0.12);
-      color: var(--gold);
-      margin-bottom: 24px;
-      font-weight: 900;
-    }
-
-    .service h3 { font-size: 22px; margin-bottom: 10px; }
-    .service p { color: var(--muted); font-size: 14px; }
-
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .package {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      padding: 28px;
-      border: 1px solid var(--line-soft);
-      border-radius: 26px;
-      background: rgba(255,255,255,0.025);
-      min-height: 480px;
-    }
-
-    .package.featured {
-      border-color: rgba(214,194,138,0.42);
-      background:
-        radial-gradient(circle at top, rgba(214,194,138,0.13), transparent 24rem),
-        rgba(19,19,24,0.78);
-      box-shadow: 0 20px 70px rgba(0,0,0,0.32);
-    }
-
-    .tag {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: var(--bg);
-      background: var(--gold);
-      border-radius: 999px;
-      padding: 7px 10px;
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .package h3 { font-size: 26px; margin-bottom: 10px; }
-    .package p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
-
-    .price {
-      font-family: "Syne", sans-serif;
-      font-size: 36px;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
-
-    .price small {
-      color: var(--muted);
-      font-family: "DM Sans", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0;
-    }
-
-    .package ul {
-      display: grid;
-      gap: 11px;
-      margin: 24px 0 26px;
-      list-style: none;
+    .who {
+      padding: 22px;
+      border: 1px solid var(--soft-line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.025);
       color: var(--muted);
       font-size: 14px;
     }
 
-    .package li { display: flex; gap: 10px; align-items: flex-start; }
-    .package li::before { content: "✓"; color: var(--gold); font-weight: 900; }
-    .package .btn { margin-top: auto; width: 100%; }
-
-    .results-band {
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      background:
-        linear-gradient(90deg, rgba(214,194,138,0.11), rgba(255,255,255,0.025)),
-        rgba(19,19,24,0.72);
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 20px;
+    .who strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-family: "Syne", sans-serif;
+      font-size: 20px;
+      letter-spacing: -0.03em;
     }
-
-    .result h3 { font-size: 36px; color: var(--gold); margin-bottom: 8px; }
-    .result p { color: var(--muted); font-size: 14px; }
-
-    .faq { display: grid; gap: 12px; }
-
-    .faq-item {
-      border: 1px solid var(--line-soft);
-      border-radius: 18px;
-      background: rgba(255,255,255,0.025);
-      padding: 22px;
-    }
-
-    .faq-item h3 { font-size: 20px; margin-bottom: 8px; letter-spacing: -0.02em; }
-    .faq-item p { color: var(--muted); font-size: 15px; }
 
     .final-cta {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 34px;
-      padding: 70px 34px;
       text-align: center;
+      padding: 64px 28px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
       background:
-        radial-gradient(circle at top, rgba(214,194,138,0.18), transparent 30rem),
-        rgba(19,19,24,0.78);
-      box-shadow: var(--shadow);
+        radial-gradient(circle at top, rgba(214, 194, 138, 0.18), transparent 28rem),
+        rgba(18, 18, 23, 0.78);
+      box-shadow: 0 22px 72px rgba(0, 0, 0, 0.32);
     }
 
-    .final-cta h2 { max-width: 840px; margin: 0 auto 18px; }
-    .final-cta p { color: var(--muted); max-width: 640px; margin: 0 auto 30px; font-size: 17px; }
+    .final-cta h2 {
+      max-width: 820px;
+      margin: 0 auto 16px;
+    }
 
-    footer { padding: 34px 0; border-top: 1px solid var(--line-soft); }
+    .final-cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    footer {
+      border-top: 1px solid var(--soft-line);
+      padding: 30px 0;
+    }
 
     .footer-inner {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
       align-items: center;
+      gap: 20px;
       color: var(--faint);
       font-size: 13px;
     }
 
-    .footer-links { display: flex; gap: 18px; }
-    .footer-links a { color: var(--muted); }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      color: var(--muted);
+    }
 
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(16px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
 
-    .reveal.show { opacity: 1; transform: translateY(0); }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    @media (max-width: 980px) {
-      .nav-links { display: none; }
-      .hero { padding-top: 130px; min-height: auto; }
-      .hero-grid, .section-head, .offer-grid { grid-template-columns: 1fr; }
-      .problem-grid, .steps, .services-grid, .packages, .results-band { grid-template-columns: 1fr 1fr; }
-      .problem:nth-child(2) { border-right: 0; }
-      .problem { border-bottom: 1px solid var(--line-soft); }
-      .problem:nth-child(3), .problem:nth-child(4) { border-bottom: 0; }
+    @media (max-width: 920px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 68px;
+      }
+
+      .hero-grid,
+      .section-head,
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .who-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 640px) {
-      .shell, .nav-inner, .footer-inner { width: min(100% - 28px, var(--max)); }
-      .nav-inner { height: 68px; }
-      .logo { font-size: 15px; }
-      .nav-cta { padding: 10px 13px; font-size: 11px; }
-      .hero { padding: 112px 0 58px; }
-      h1 { font-size: clamp(43px, 16vw, 64px); }
-      .hero-copy { font-size: 16px; }
-      .btn { width: 100%; padding: 15px 18px; }
-      .hero-card { padding: 18px; }
-      section { padding: 68px 0; }
-      .problem-grid, .steps, .services-grid, .packages, .results-band { grid-template-columns: 1fr; }
-      .problem, .problem:nth-child(2), .problem:nth-child(3) { border-right: 0; border-bottom: 1px solid var(--line-soft); }
-      .problem:nth-child(4) { border-bottom: 0; }
-      .offer { padding: 18px; border-radius: 24px; }
-      .offer-main { padding: 22px; }
-      .package { min-height: auto; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .shell,
+      .nav-inner,
+      .footer-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-inner {
+        height: 66px;
+      }
+
+      main {
+        padding-top: 66px;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .nav-cta {
+        padding: 10px 13px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 54px 0 44px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 15vw, 60px);
+      }
+
+      .hero-copy,
+      .section-copy {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 15px 18px;
+      }
+
+      .audit-card,
+      .offer-box {
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .cards,
+      .who-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -642,210 +621,58 @@
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a href="#" class="logo">MIKYE<span> </span>MEDIA</a>
+      <a href="#" class="logo">MIKYE<span>MEDIA</span></a>
 
-      <div class="nav-links">
-        <a href="#offer">Offer</a>
-        <a href="#process">Process</a>
-        <a href="#packages">Packages</a>
-        <a href="#faq">FAQ</a>
-      </div>
+      <nav class="nav-links">
+        <a href="#services">What I Do</a>
+        <a href="#audit">Free Audit</a>
+        <a href="#who">Who It’s For</a>
+      </nav>
 
-      <a class="nav-cta" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Free Call</a>
+      <a class="nav-cta" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Free Audit</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="shell hero-grid">
-        <div class="hero-left reveal">
-          <div class="eyebrow">Social Media Marketing</div>
-          <h1>I manage and grow your social media so your brand looks <span class="gold">premium online.</span></h1>
+        <div class="reveal">
+          <div class="eyebrow">Freelance Brand Scaling</div>
+          <h1>Grow your brand with cleaner content, better positioning, and smarter <span class="gold">social media.</span></h1>
           <p class="hero-copy">
-            Mikye Media helps businesses, creators, and personal brands grow online through social media management, content strategy, social growth, and brand positioning.
+            Mikye Media helps creators, brands, and small businesses improve their Instagram, plan better content, and turn attention into real customers.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book a Free Page Audit</a>
-            <a class="btn btn-secondary" href="#offer">See What I Do</a>
+            <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book a Free Instagram Audit</a>
+            <a class="btn btn-secondary" href="#services">See What I Do</a>
           </div>
 
-          <div class="proof-row">
-            <div class="proof-pill">Social media management</div>
-            <div class="proof-pill">Content strategy</div>
-            <div class="proof-pill">Growth strategy</div>
+          <div class="mini-proof">
+            <span>Instagram cleanup</span>
+            <span>Content strategy</span>
+            <span>Growth direction</span>
           </div>
         </div>
 
-        <aside class="hero-card reveal">
-          <div class="card-content">
-            <div class="mini-label">What Mikye Media Handles</div>
+        <aside class="audit-card reveal">
+          <div class="audit-inner">
+            <div class="card-kicker">Free Audit Call</div>
+            <h3>I’ll show you what’s hurting your page.</h3>
+            <p>
+              Before you pay for anything, book a free audit. I’ll review your Instagram and show what I would fix first to make your brand look cleaner and more trustworthy.
+            </p>
 
-            <div class="dashboard">
-              <h3>Your social media, managed like a brand.</h3>
-              <p>I help take your social media from random and inconsistent to clean, active, and built for attention.</p>
+            <ul class="audit-list">
+              <li>What your bio should say</li>
+              <li>What your page is missing</li>
+              <li>What content you should post</li>
+              <li>How to make the brand look more legit</li>
+            </ul>
 
-              <div class="metric-list">
-                <div class="metric">
-                  <strong>Brand Trust</strong>
-                  <span>92%</span>
-                  <div class="bar"><i style="width:92%"></i></div>
-                </div>
-
-                <div class="metric">
-                  <strong>Content Consistency</strong>
-                  <span>88%</span>
-                  <div class="bar"><i style="width:88%"></i></div>
-                </div>
-
-                <div class="metric">
-                  <strong>Growth Direction</strong>
-                  <span>95%</span>
-                  <div class="bar"><i style="width:95%"></i></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="deliverable">
-              <span class="check">✓</span>
-              <div>
-                <strong>Social media service, not a course.</strong>
-                <span>You let Mikye Media manage and grow your social media. I handle the online growth side so you can focus on your business.</span>
-              </div>
-            </div>
+            <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book Free Audit</a>
           </div>
         </aside>
-      </div>
-    </section>
-
-    <section id="problem">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">The Problem</div>
-            <h2>Your social media could be making your brand look smaller than it really is.</h2>
-          </div>
-          <p class="section-copy">
-            A business or creator can have a good product, service, or skill — but if the social media looks empty, confusing, or inconsistent, people will not take it seriously. Mikye Media fixes the way your brand shows up online.
-          </p>
-        </div>
-
-        <div class="problem-grid reveal">
-          <div class="problem">
-            <div class="problem-num">01</div>
-            <h3>Your social media is not clear.</h3>
-            <p>People land on your page and do not immediately understand what you do, why it matters, or why they should follow or buy.</p>
-          </div>
-
-          <div class="problem">
-            <div class="problem-num">02</div>
-            <h3>Your content is inconsistent.</h3>
-            <p>No clear posting strategy makes the brand feel inactive, random, or hard to trust.</p>
-          </div>
-
-          <div class="problem">
-            <div class="problem-num">03</div>
-            <h3>Your brand looks basic.</h3>
-            <p>If your page looks like everyone else’s, people compare you by price instead of value.</p>
-          </div>
-
-          <div class="problem">
-            <div class="problem-num">04</div>
-            <h3>Your page is not growing.</h3>
-            <p>Without a real marketing system, your page depends on luck, occasional posts, or random word of mouth.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="offer">
-      <div class="shell">
-        <div class="offer reveal">
-          <div class="offer-grid">
-            <div class="offer-main">
-              <div class="section-kicker">The Offer</div>
-              <h3>Done-For-You Social Media Marketing</h3>
-              <p>
-                Mikye Media is a social media marketing service. I manage and improve your social media presence so your brand looks cleaner, grows stronger, and gets taken seriously.
-              </p>
-              <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Get a Free Audit</a>
-            </div>
-
-            <div class="deliverables">
-              <div class="deliverable">
-                <span class="check">✓</span>
-                <div>
-                  <strong>Profile Optimization</strong>
-                  <span>Bio, highlights, pinned posts, links, and page structure improved so the first impression looks professional.</span>
-                </div>
-              </div>
-
-              <div class="deliverable">
-                <span class="check">✓</span>
-                <div>
-                  <strong>Content Strategy</strong>
-                  <span>Post ideas, captions, hooks, story prompts, and a clear content plan made for your brand.</span>
-                </div>
-              </div>
-
-              <div class="deliverable">
-                <span class="check">✓</span>
-                <div>
-                  <strong>Social Growth</strong>
-                  <span>Growth strategy built around visibility, consistency, engagement, and making the brand look active.</span>
-                </div>
-              </div>
-
-              <div class="deliverable">
-                <span class="check">✓</span>
-                <div>
-                  <strong>Brand Positioning</strong>
-                  <span>Your page gets positioned so people understand what you do, what makes you valuable, and why they should care.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">The Process</div>
-            <h2>Simple process. Better content. Stronger brand.</h2>
-          </div>
-          <p class="section-copy">
-            You do not need to manage the marketing strategy alone. Mikye Media handles the content strategy, growth system, and brand improvement.
-          </p>
-        </div>
-
-        <div class="steps reveal">
-          <div class="step">
-            <div class="step-num">01</div>
-            <h3>Audit</h3>
-            <p>I review your current social media, audience, content, brand message, and what is stopping growth.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-num">02</div>
-            <h3>Optimize</h3>
-            <p>I improve the profile, page structure, bio, highlights, content strategy, and overall brand look.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-num">03</div>
-            <h3>Manage</h3>
-            <p>I help plan and manage the page with consistent content strategy, growth moves, and page optimization.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-num">04</div>
-            <h3>Scale</h3>
-            <p>We keep improving your social media so it builds more trust, gets more attention, and supports your business goals.</p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -853,168 +680,76 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">Services</div>
-            <h2>What I can handle for your social media.</h2>
+            <div class="kicker">What I Do</div>
+            <h2>Simple help for brands that want to look better online.</h2>
           </div>
           <p class="section-copy">
-            Mikye Media is for people who want their social media to look more professional, stay active, and grow with a real strategy behind it.
+            This is not a course and not a random growth hack. Mikye Media helps fix the way your brand shows up online so people understand it faster and trust it more.
           </p>
         </div>
 
-        <div class="services-grid reveal">
-          <div class="service">
-            <div class="service-icon">01</div>
-            <h3>Social Media Management</h3>
-            <p>Ongoing help managing the page direction, keeping it organized, active, and aligned with the brand.</p>
+        <div class="cards reveal">
+          <div class="card">
+            <div class="card-num">01</div>
+            <h3>Instagram Cleanup</h3>
+            <p>Bio, profile picture, highlights, pinned posts, link setup, and page layout cleaned up so the first impression is stronger.</p>
           </div>
 
-          <div class="service">
-            <div class="service-icon">02</div>
-            <h3>Brand Positioning</h3>
-            <p>Making your social media clearly show who the brand is for, what it offers, and why people should trust it.</p>
-          </div>
-
-          <div class="service">
-            <div class="service-icon">03</div>
+          <div class="card">
+            <div class="card-num">02</div>
             <h3>Content Strategy</h3>
-            <p>Content pillars, post ideas, hooks, captions, story ideas, and weekly direction so the page never feels random.</p>
+            <p>Post ideas, hooks, captions, story ideas, and a simple content direction so the page stops feeling random.</p>
           </div>
 
-          <div class="service">
-            <div class="service-icon">04</div>
-            <h3>Social Growth</h3>
-            <p>Growth moves built around visibility, consistency, engagement, and making your social media look active.</p>
-          </div>
-
-          <div class="service">
-            <div class="service-icon">05</div>
-            <h3>Profile Optimization</h3>
-            <p>Bio, highlights, pinned posts, profile layout, call-to-action, and link setup improved for trust.</p>
-          </div>
-
-          <div class="service">
-            <div class="service-icon">06</div>
-            <h3>Monthly Optimization</h3>
-            <p>Reviewing what works, what needs to change, and how to keep your social media growing cleaner every month.</p>
+          <div class="card">
+            <div class="card-num">03</div>
+            <h3>Growth Direction</h3>
+            <p>A clear plan for what to post, who to target, what to improve, and how to start turning attention into customers.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="packages">
+    <section id="audit">
+      <div class="shell">
+        <div class="offer-box reveal">
+          <div class="offer-grid">
+            <div>
+              <div class="kicker">Free First Step</div>
+              <h2>Start with a free Instagram audit.</h2>
+              <p>
+                If your page is messy, inactive, unclear, or not converting people into customers, I’ll show you exactly what needs to change first.
+              </p>
+              <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book Your Free Audit</a>
+            </div>
+
+            <ul class="simple-list">
+              <li><strong>Page Review</strong>I look at your Instagram like a customer would and point out what is confusing or weak.</li>
+              <li><strong>Fix List</strong>You get simple changes that can make your page cleaner and more professional.</li>
+              <li><strong>Growth Plan</strong>I explain what content and positioning would help your brand grow next.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="who">
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">Packages</div>
-            <h2>Choose how much of your social media you want handled.</h2>
+            <div class="kicker">Who It’s For</div>
+            <h2>Built for people trying to make their brand look serious.</h2>
           </div>
           <p class="section-copy">
-            These are service packages for clients who want Mikye Media to manage, grow, and improve their social media.
+            You do not need a huge following. This is for brands that need a better first impression, better content direction, and a cleaner online presence.
           </p>
         </div>
 
-        <div class="packages reveal">
-          <div class="package">
-            <h3>Social Starter</h3>
-            <p>For brands that need their social media cleaned up before they start scaling.</p>
-            <div class="price">$499 <small>one-time</small></div>
-            <ul>
-              <li>Social media audit</li>
-              <li>Bio rewrite</li>
-              <li>Highlight and pinned post direction</li>
-              <li>Profile trust optimization</li>
-              <li>Basic content strategy</li>
-            </ul>
-            <a class="btn btn-secondary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book Audit</a>
-          </div>
-
-          <div class="package featured">
-            <div class="tag">Best Start</div>
-            <h3>Social Media Management</h3>
-            <p>For brands that want monthly help staying active, clean, and growth-focused online.</p>
-            <div class="price">$999 <small>monthly</small></div>
-            <ul>
-              <li>Everything in Social Starter</li>
-              <li>Monthly content strategy</li>
-              <li>Weekly post ideas and captions</li>
-              <li>Growth direction</li>
-              <li>Story prompts</li>
-              <li>Monthly optimization report</li>
-            </ul>
-            <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Apply Now</a>
-          </div>
-
-          <div class="package">
-            <h3>Full Social Growth</h3>
-            <p>For brands that want full social media growth direction and a stronger online presence.</p>
-            <div class="price">$2K+ <small>monthly</small></div>
-            <ul>
-              <li>Full social media management direction</li>
-              <li>Content calendar planning</li>
-              <li>Brand positioning support</li>
-              <li>Growth strategy</li>
-              <li>Offer/profile improvement</li>
-              <li>Weekly strategy support</li>
-            </ul>
-            <a class="btn btn-secondary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Talk Strategy</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="results">
-      <div class="shell">
-        <div class="results-band reveal">
-          <div class="result">
-            <h3>01</h3>
-            <p>Cleaner social media that makes your brand easier to trust.</p>
-          </div>
-
-          <div class="result">
-            <h3>02</h3>
-            <p>A stronger content strategy so your page looks active and intentional.</p>
-          </div>
-
-          <div class="result">
-            <h3>03</h3>
-            <p>A better growth system so your marketing has a real plan behind it.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">FAQ</div>
-            <h2>Questions clients may ask.</h2>
-          </div>
-          <p class="section-copy">
-            This section keeps the offer clear. Clients are not buying a course. They are hiring Mikye Media to manage and grow their social media.
-          </p>
-        </div>
-
-        <div class="faq reveal">
-          <div class="faq-item">
-            <h3>Is this a course?</h3>
-            <p>No. Mikye Media is a social media marketing service. Clients let me manage, improve, and grow their online presence.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Who is this for?</h3>
-            <p>This is for businesses, creators, personal brands, service providers, and anyone who wants their social media to look better and grow with strategy.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3>Do I need a big following already?</h3>
-            <p>No. Your page can be small, inactive, or messy. The goal is to clean it up, give it direction, and start building growth.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3>What happens on the free audit call?</h3>
-            <p>I review your current social media, show what is hurting growth or trust, and explain what Mikye Media would fix first.</p>
-          </div>
+        <div class="who-grid reveal">
+          <div class="who"><strong>Clothing Brands</strong>Streetwear, fashion pages, drops, and brands that need better content direction.</div>
+          <div class="who"><strong>Creators</strong>Creators who want their page to look cleaner and easier to understand.</div>
+          <div class="who"><strong>Local Businesses</strong>Small businesses that need their Instagram to look active and trustworthy.</div>
+          <div class="who"><strong>Personal Brands</strong>People selling a service, skill, offer, or online brand.</div>
         </div>
       </div>
     </section>
@@ -1022,13 +757,13 @@
     <section id="book">
       <div class="shell">
         <div class="final-cta reveal">
-          <div class="section-kicker">Ready to grow your social media?</div>
-          <h2>Let Mikye Media manage and grow your social media.</h2>
+          <div class="kicker">Ready?</div>
+          <h2>Let’s clean up your Instagram and make your brand look more legit.</h2>
           <p>
-            Book a free social media audit and I’ll show what needs to be fixed to make your page cleaner, more active, and better positioned for growth.
+            Book a free audit and I’ll show you what your page needs first. No pressure, just a clear breakdown of what I’d fix.
           </p>
-          <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
-            <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book Your Free Audit</a>
+          <div class="hero-actions" style="justify-content: center; margin-bottom: 0;">
+            <a class="btn btn-primary" href="https://calendly.com/mikye-mikyemedia/discovery-call" target="_blank" rel="noopener">Book Free Audit</a>
             <a class="btn btn-secondary" href="https://instagram.com/mikyemedia" target="_blank" rel="noopener">Instagram @mikyemedia</a>
           </div>
         </div>
@@ -1038,8 +773,8 @@
 
   <footer>
     <div class="footer-inner">
-      <div class="logo">MIKYE<span> </span>MEDIA</div>
-      <p>Social Media Marketing · Social Media Management · Social Growth</p>
+      <div class="logo">MIKYE<span>MEDIA</span></div>
+      <p>Brand Growth · Instagram Strategy · Social Media</p>
       <div class="footer-links">
         <a href="https://instagram.com/mikyemedia" target="_blank" rel="noopener">Instagram</a>
         <a href="mailto:mikye@mikyemedia.com">Email</a>
